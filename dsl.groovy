@@ -1,4 +1,4 @@
-multibranchPipelineJob('Robert-Test-GitHub-App') {
+multibranchPipelineJob('sandbox/Robert-Test-GitHub-App') {
   description('Automatically built for PRs and the main/master branch')
 
   branchSources {
