@@ -1,4 +1,4 @@
-multibranchPipelineJob('sandbox/Robert-Test-GitHub-App') {
+multibranchPipelineJob('Webhook-Test') {
   description('Automatically built for PRs and the main/master branch')
 
   branchSources {
