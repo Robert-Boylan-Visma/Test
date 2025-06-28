@@ -1,8 +1,6 @@
 pipeline {
   agent {
-    ecs {
-      inheritFrom 'python3-builder-agent'
-    }
+    label 'linux'
   }
   options {
     timeout(time: 45, unit: "MINUTES")
