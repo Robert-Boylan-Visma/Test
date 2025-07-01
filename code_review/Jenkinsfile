@@ -1,7 +1,7 @@
 pipeline {
   environment {
     GIT_PR_NUMBER = "${env.gitlabMergeRequestIid ? env.gitlabMergeRequestIid : env.CHANGE_ID}"
-    GIT_COMMIT_SHA = "${env.gitlabMergeRequestIid ? env.gitlabMergeRequestLastCommit : env.GIT_COMMIT}"
+    GIT_COMMIT_SHA = "${env.gitlabMergeRequestLastCommit ? env.gitlabMergeRequestLastCommit : env.GIT_COMMIT}"
   }
   agent any
   stages {
