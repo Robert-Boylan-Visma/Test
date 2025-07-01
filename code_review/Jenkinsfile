@@ -1,0 +1,17 @@
+pipeline {
+  environment {
+    GIT_PR_NUMBER = "${env.gitlabMergeRequestIid ? env.gitlabMergeRequestIid : env.CHANGE_ID}"
+    GIT_COMMIT_SHA = "${env.gitlabMergeRequestIid ? env.gitlabMergeRequestLastCommit : env.GIT_COMMIT}"
+  }
+  agent any
+  stages {
+    stage('Print Params') {
+      steps {
+        script {
+          echo "Git PR Number: ${GIT_PR_NUMBER}"
+          echo "Git Commit SHA: ${GIT_COMMIT_SHA}"
+        }
+      }
+    }
+  }
+}
